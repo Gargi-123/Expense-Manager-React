@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './App.module.css';
-import Dashboard from './Components/dashboard/Dashboard';
+import Dashboard from "./components/dashboard/Dashboard"
+import Login from "./components/authentication/login/Login";
+import PublicRoutes from "./routes/PublicRoutes";
 
 function App() {
   return (
     <div>
-        <Dashboard/>
+        {/* <Dashboard/> */}
+        <PublicRoutes />
     </div>
   );
 }
