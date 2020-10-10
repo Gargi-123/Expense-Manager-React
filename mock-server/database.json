@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "sas",
+      "password": "sasa"
+    },
+    {
+      "email": "ds",
+      "password": "ds",
+      "id": 2
+    },
+    {
+      "email": "ds",
+      "password": "ds",
+      "id": 3
+    },
+    {
+      "id": "80952985-3bd5-4d8b-a1b9-3e540d16cf80",
+      "email": "ds",
+      "password": "ds"
+    },
+    {
+      "id": "5bdc3c4a-eb6c-4fc1-81ee-4bba310cf8a8",
+      "email": "ds",
+      "password": "ds"
+    },
+    {
+      "id": 12,
+      "username": "sas",
+      "password": "sasa"
+    },
+    {
+      "id": "4ae3be14-5295-4d68-9ddf-9ef6ef6d3203",
+      "email": "ds",
+      "password": "ds"
+    }
+  ]
+}
