@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { registerUser } from "./../../redux/authReducer/actions";
+import { registerUser } from "../../redux/authReducer/actions";
 import { Green, Card, Input, Button, Div } from "./Styles";
 import cStyles from "./../../styles/common.module.css";
 

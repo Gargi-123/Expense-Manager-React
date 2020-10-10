@@ -4,6 +4,9 @@ import {
   REGISTER_USER_FAILURE,
 } from "./actionTypes";
 
+
+
+
 const initState = {};
 
 export const authReducer = (state = initState, { type, payload }) => {
