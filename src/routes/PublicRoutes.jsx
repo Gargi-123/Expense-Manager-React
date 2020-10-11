@@ -4,12 +4,14 @@ import Login from "../components/authentication/login/Login";
 import Register from "../components/authentication/register/Register";
 import Dashboard from "../components/dashboard/Dashboard";
 
+
 const PublicRoutes = () => {
   return (
     <Switch>
       <Route exact path="/" render={() => <Login />} />
       <Route path="/register" render={() => <Register />} />
-      <Route path="/dashboard" render={() => <Dashboard/>}/>
+      <Route path="/dashboard" exact render={(props) => <Dashboard {...props} />} />
+     
     </Switch>
   );
 };
