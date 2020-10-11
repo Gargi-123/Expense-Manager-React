@@ -23,7 +23,7 @@ export const Input = styled.input`
   background: #f5f5f5;
   border: 1px solid #fff;
   border-radius: 5px;
-  width: 80%;
+  width: 90%;
   font-size: 16px;
 `;
 
@@ -42,4 +42,8 @@ letter-spacing: 1px;
 export const Div = styled.div`
 background: #f5f5f5;
 height: 520px;
+`
+
+export const Red = styled.div`
+color: red;
 `
