@@ -45,12 +45,12 @@ class Dashboard extends React.Component {
     const { getTransactions } = this.props;
     const loadedData = loadData("auth");
     const { id: user_id } = loadedData;
-    getTransactions(user_id)
+    getTransactions(user_id);
   }
 
   render() {
     const { title, amount } = this.state;
-    const { transactions  } = this.props;
+    const { transactions } = this.props;
     console.log(transactions);
     return (
       <div className="container">
