@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import { Green, Card, Input, Button, Div } from "./../Styles";
+import { loginUser } from "./../../../redux/authReducer/actions";
+import { loadData } from "./../../../redux/localStorage";
+import { Green, Card, Input, Button, Div , Red} from "./../Styles";
 import cStyles from "./../../../styles/common.module.css";
 
 class Login extends Component {
@@ -21,23 +22,29 @@ class Login extends Component {
     });
   };
 
-  handleRegister = (e) => {
+  handleLogin = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
-    const { registerUser } = this.props;
+    console.log(this.props);
+    const loadedData = loadData("auth");
+    const { id } = loadedData;
 
     const item = {
-      id: uuidv4(),
+      id,
       email,
       password,
     };
+    const { loginUser, isLoggedIn, history } = this.props;
+    loginUser(item);
 
-    registerUser(item);
+    if (isLoggedIn) {
+      history.push("/dashboard");
+    }
   };
 
   render() {
     const { email, password } = this.state;
-    console.log(this.state);
+    const { authResponse } = this.props;
 
     return (
       <>
@@ -65,9 +72,9 @@ class Login extends Component {
               />
             </div>
             <div>
-              <Button>LOGIN</Button>
+              <Button onClick={this.handleLogin}>LOGIN</Button>
             </div>
-
+            <Red>{authResponse && authResponse}</Red>
             <div>
               Don't have an account ?{" "}
               <Link to="/register" style={{ color: "#00bc2a" }}>
@@ -82,8 +89,13 @@ class Login extends Component {
   }
 }
 
-//const mapStateToProps = () => ({});
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.auth.isLoggedIn,
+  authResponse: state.auth.authResponse,
+});
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (payload) => dispatch(loginUser(payload)),
+});
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
