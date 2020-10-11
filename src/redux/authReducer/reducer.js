@@ -4,10 +4,11 @@ import {
   REGISTER_USER_FAILURE,
 } from "./actionTypes";
 
+import { saveData } from "./../localStorage";
 
-
-
-const initState = {};
+const initState = {
+  navigate: "/dashboard",
+};
 
 export const authReducer = (state = initState, { type, payload }) => {
   switch (type) {
@@ -20,9 +21,10 @@ export const authReducer = (state = initState, { type, payload }) => {
 
     case REGISTER_USER_SUCCESS:
       console.log(type, payload);
-
+      saveData("id", payload.id);
       return {
         ...state,
+        navigate: state.navigate,
       };
 
     case REGISTER_USER_FAILURE:

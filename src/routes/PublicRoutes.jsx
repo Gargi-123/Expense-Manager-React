@@ -8,8 +8,8 @@ import Dashboard from "../components/dashboard/Dashboard";
 const PublicRoutes = () => {
   return (
     <Switch>
-      <Route exact path="/" render={() => <Login />} />
-      <Route path="/register" render={() => <Register />} />
+      <Route exact path="/" render={(props) => <Login {...props} />} />
+      <Route path="/register" render={(props) => <Register {...props}/>} />
       <Route path="/dashboard" exact render={(props) => <Dashboard {...props} />} />
      
     </Switch>
