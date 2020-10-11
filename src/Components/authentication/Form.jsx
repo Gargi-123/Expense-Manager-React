@@ -97,7 +97,7 @@ class Form extends Component {
   }
 }
 
-const mapStateToProps = () => ({});
+//const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   registerUser: (payload) => dispatch(registerUser(payload)),
