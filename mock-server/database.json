@@ -1,39 +1,41 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "sas",
-      "password": "sasa"
+      "id": "ba5f126d-b43d-40b5-a49f-fe8728143020",
+      "name": "dsds",
+      "email": "k@g.c",
+      "password": "dsdsds"
     },
     {
-      "email": "ds",
-      "password": "ds",
-      "id": 2
+      "id": "3983c531-b294-4cc0-a17f-6a11f642ec83",
+      "name": "aaaa",
+      "email": "a@a.com",
+      "password": "aaaaaa"
+    }
+  ],
+  "transactions": [
+    {
+      "user_id": 21,
+      "id": 9090,
+      "title": "sa",
+      "type": "lpl",
+      "amount": "dsds"
     },
     {
-      "email": "ds",
-      "password": "ds",
-      "id": 3
+      "user_id": "3983c531-b294-4cc0-a17f-6a11f642ec83",
+      "id": "c0ade2b9-fdfb-461c-9ede-78f523b19811",
+      "title": "ssal",
+      "amount": "2",
+      "type": "credit",
+      "time_stamp": "2020-10-11T14:57:19.335Z"
     },
     {
-      "id": "80952985-3bd5-4d8b-a1b9-3e540d16cf80",
-      "email": "ds",
-      "password": "ds"
-    },
-    {
-      "id": "5bdc3c4a-eb6c-4fc1-81ee-4bba310cf8a8",
-      "email": "ds",
-      "password": "ds"
-    },
-    {
-      "id": 12,
-      "username": "sas",
-      "password": "sasa"
-    },
-    {
-      "id": "4ae3be14-5295-4d68-9ddf-9ef6ef6d3203",
-      "email": "ds",
-      "password": "ds"
+      "user_id": "3983c531-b294-4cc0-a17f-6a11f642ec83",
+      "id": "e712384c-ea8c-4f1a-9889-78b5fcd2d31d",
+      "title": "sa",
+      "amount": "2",
+      "type": "credit",
+      "time_stamp": "2020-10-11T14:58:12.816Z"
     }
   ]
 }
