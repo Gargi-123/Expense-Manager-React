@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Navbar from "../navbar/Navbar";
+import LedgerNavbar from "../../components/navbar/LedgerNavbar"
 
 const Ledger = () => {
   const allTranscations = useSelector((state) => state.ledger.transactions);
   console.log("allTranscations", allTranscations)
   return (
+    <>
+    <Navbar/>
     <div>
-      <Link to="/ledger">All</Link>
+      <Link to="/ledger">
+        <LedgerNavbar/>
+      </Link>
       <div className="row mt-5">
         <div className="col bg-light">
           <div className="row mt-4 text-center">
@@ -41,6 +47,7 @@ const Ledger = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
