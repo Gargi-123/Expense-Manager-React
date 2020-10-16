@@ -51,7 +51,7 @@ class Dashboard extends React.Component {
   render() {
     const { title, amount } = this.state;
     const { transactions } = this.props;
-    console.log(transactions);
+    console.log("transactions",transactions);
     return (
       <div className="container">
         <div className="row mt-3 mb-5">
@@ -78,27 +78,42 @@ class Dashboard extends React.Component {
         <hr />
         <div className="row mt-5">
           <div className="col bg-light">
-            <div class="card" style={{ boxShadow: " 0 10px 6px -6px #777" }}>
-              <div class="card-body">This is some text within a card body.</div>
-            </div>
-            <br />
-            <div class="card" style={{ boxShadow: " 0 10px 6px -6px #777" }}>
-              <div class="card-body">This is some text within a card body.</div>
-            </div>
-            <br />
-            <div class="card" style={{ boxShadow: " 0 10px 6px -6px #777" }}>
-              <div class="card-body">This is some text within a card body.</div>
-            </div>
-            <br />
-            <div class="card" style={{ boxShadow: " 0 10px 6px -6px #777" }}>
-              <div class="card-body">This is some text within a card body.</div>
-            </div>
-            <br />
-            <div class="card" style={{ boxShadow: " 0 10px 6px -6px #777" }}>
-              <div class="card-body">This is some text within a card body.</div>
+            <div className="row mt-4 text-center">
+              <div className="col" style={{ maxWidth: "1000px", margin: "auto" }}>
+                <h2 className="p-2">Your Expenses</h2>
+                <table className="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {transactions && transactions.filter((items, index) => {
+                      console.log(items,index)
+                      if (index < 5) {
+                        return (
+                          <>
+                            <tr style={{ backgroundColor: "#FF7F7F" }}>
+                              <td>{items.time_stamp} </td>
+                              <td>{items.title}</td>
+                              <td>{items.amount} </td>
+                              <td>{items.type} </td>
+                            </tr>
+                          </>
+
+                        )
+                      }
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
           <div className="col">
+            <h2 className="p-2 text-center">ADD Expenses</h2>
             <label>Title</label>
             <input
               type="text"
@@ -162,4 +177,4 @@ export const mapDispatchToProps = (dispatch) => ({
   getTransactions: (payload) => dispatch(getTransactions(payload)),
 });
 
-export default connect(null, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

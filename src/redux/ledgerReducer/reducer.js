@@ -59,7 +59,7 @@ export const ledgerReducer = (state = initState, { type, payload }) => {
 
       return {
         ...state,
-        transactions: [...payload],
+        transactions: payload,
       };
     }
 
