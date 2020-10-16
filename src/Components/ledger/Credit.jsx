@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadData } from "./../../redux/localStorage";
 import { getCreditTransactions } from "./../../redux/ledgerReducer/actions";
 import { Link } from "react-router-dom";
+import LedgerNavbar from "../../components/navbar/LedgerNavbar"
+import Navbar from "../navbar/Navbar";
+
 
 const Credit = () => {
   const credits = useSelector((state) => state.ledger.credit);
@@ -18,7 +21,9 @@ const Credit = () => {
 
   return (
     <>
-      <div><Link to="/ledger/credit">Credit</Link></div>
+    <Navbar/>
+      <div><Link to="/ledger/credit">
+      <LedgerNavbar/></Link></div>
       <div className="row mt-5">
         <div className="col bg-light">
           <div className="row mt-4 text-center">

@@ -5,6 +5,7 @@ import { loadData } from "./../../redux/localStorage";
 import { v4 as uuidv4 } from "uuid";
 import { addTransaction } from "./../../redux/ledgerReducer/actions";
 import { getTransactions } from "./../../redux/ledgerReducer/actions";
+import Navbar from "../navbar/Navbar";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -53,6 +54,8 @@ class Dashboard extends React.Component {
     const { transactions } = this.props;
     console.log("transactions",transactions);
     return (
+      <>
+      <Navbar/>
       <div className="container">
         <div className="row mt-3 mb-5">
           <div className="col">
@@ -164,6 +167,7 @@ class Dashboard extends React.Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }
@@ -177,4 +181,4 @@ export const mapDispatchToProps = (dispatch) => ({
   getTransactions: (payload) => dispatch(getTransactions(payload)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(null, mapDispatchToProps)(Dashboard);

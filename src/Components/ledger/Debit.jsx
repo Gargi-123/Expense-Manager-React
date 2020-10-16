@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadData } from "./../../redux/localStorage";
 import { getDebitTransactions } from "./../../redux/ledgerReducer/actions";
 import { Link } from "react-router-dom";
+import LedgerNavbar from "../../components/navbar/LedgerNavbar"
+import Navbar from "../navbar/Navbar";
+
 
 const Debit = () => {
   const dispatch = useDispatch();
@@ -17,7 +20,9 @@ const Debit = () => {
   }, [dispatch]);
   return (
     <>
-      <div><Link to="/ledger/debit">Debit</Link></div>
+    <Navbar/>
+      <div><Link to="/ledger/debit">
+      <LedgerNavbar/></Link></div>
       <div className="row mt-5">
       <div className="col bg-light">
               <div className="row mt-4 text-center">
