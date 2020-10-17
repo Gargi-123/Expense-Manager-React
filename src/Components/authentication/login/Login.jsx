@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "./../../../redux/authReducer/actions";
 import { loadData } from "./../../../redux/localStorage";
-import { Green, Card, Input, Button, Div , Red} from "./../Styles";
+import { Green, Card, Input, Button, Div, Red } from "./../Styles";
 import cStyles from "./../../../styles/common.module.css";
 
 class Login extends Component {
@@ -36,15 +36,15 @@ class Login extends Component {
     };
     const { loginUser, isLoggedIn, history } = this.props;
     loginUser(item);
-
-    if (isLoggedIn) {
-      history.push("/dashboard");
-    }
   };
 
   render() {
     const { email, password } = this.state;
-    const { authResponse } = this.props;
+    const { authResponse, isLoggedIn } = this.props;
+
+    if (isLoggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
 
     return (
       <>

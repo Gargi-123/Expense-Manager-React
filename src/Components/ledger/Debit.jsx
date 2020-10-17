@@ -9,7 +9,7 @@ import Navbar from "../navbar/Navbar";
 
 const Debit = () => {
   const dispatch = useDispatch();
-  const debits = useSelector((state) => state.ledger.credit);
+  const debits = useSelector((state) => state.ledger.debits);
   console.log("credits", debits);
 
   const loadedData = loadData("auth");
@@ -17,7 +17,7 @@ const Debit = () => {
 
   useEffect(() => {
     dispatch(getDebitTransactions(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
   return (
     <>
     <Navbar/>

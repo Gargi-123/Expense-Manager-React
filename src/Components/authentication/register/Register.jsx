@@ -13,9 +13,6 @@ class Register extends Component {
       name: "",
       email: "",
       password: "",
-      nameCheck: "",
-      emailCheck: "",
-      passwordCheck: "",
     };
   }
 
@@ -32,24 +29,19 @@ class Register extends Component {
 
     if (name.length < 4) {
       this.setState({
-        nameCheck: "name should be atleast 4 characters",
+        error: "name should be atleast 4 characters",
       });
-    } else if (email.split("@").length !== 2 && email.split(".").length !== 2) {
+    } else if (email.split("@").length !== 2 || email.split(".").length !== 2) {
       this.setState({
-        nameCheck: "",
-        emailCheck: "Invalid Email",
+        error: "Invalid Email",
       });
     } else if (password.length < 6) {
       this.setState({
-        nameCheck: "",
-        emailCheck: "",
-        passwordCheck: "password should be atleast 6 characters",
+        error: "password should be atleast 6 characters",
       });
     } else {
       this.setState({
-        nameCheck: "",
-        emailCheck: "",
-        passwordCheck: "",
+        error: "",
       });
 
       const { registerUser, history } = this.props;
@@ -67,14 +59,7 @@ class Register extends Component {
   };
 
   render() {
-    const {
-      email,
-      password,
-      name,
-      nameCheck,
-      emailCheck,
-      passwordCheck,
-    } = this.state;
+    const { email, password, name, error } = this.state;
     console.log(this.state);
     return (
       <>
@@ -115,9 +100,8 @@ class Register extends Component {
             <div>
               <Button onClick={this.handleRegister}>Register</Button>
             </div>
-            <Red>{nameCheck && nameCheck}</Red>
-            <Red>{emailCheck && emailCheck}</Red>
-            <Red>{passwordCheck && passwordCheck}</Red>
+            <Red>{error && error}</Red>
+
             <div>
               Have an account ?{" "}
               <Link to="/" style={{ color: "#00bc2a" }}>
