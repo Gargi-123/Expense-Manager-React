@@ -8,7 +8,7 @@ function Navbar() {
         <>
             <div id={Styles.nav}>
                 <ul>
-                    <li><Link to="/ledger">Ledger</Link></li>
+                    <li><Link to="/ledger">All</Link></li>
                     <li><Link to="/ledger/credit">Credit</Link></li>
                     <li><Link to="/ledger/debit">Debit</Link></li>
                 </ul>

@@ -11,6 +11,24 @@
       "name": "aaaa",
       "email": "a@a.com",
       "password": "aaaaaa"
+    },
+    {
+      "id": "e0a3c1a2-cac0-42f1-a950-b1b25f4b3389",
+      "name": "sasasa",
+      "email": "khanahmed925@gmail.com",
+      "password": "aaaaaaa"
+    },
+    {
+      "id": "c3eff70e-a2d1-461a-90b8-6dc5f6912a9a",
+      "name": "Ahmed",
+      "email": "khanahmed924@gmail.com",
+      "password": "aaaaaaa"
+    },
+    {
+      "id": "0fc0ecac-d761-49b5-94c0-86378d708f1e",
+      "name": "Ahmed",
+      "email": "khanahmed5@gmail.com",
+      "password": "aaaaaa"
     }
   ],
   "transactions": [
@@ -68,6 +86,14 @@
       "amount": "44",
       "type": "credit",
       "time_stamp": "2020-10-11T15:26:47.587Z"
+    },
+    {
+      "user_id": "3983c531-b294-4cc0-a17f-6a11f642ec83",
+      "id": "126e6e20-573e-48ef-94a1-6bb94ce68c65",
+      "title": "dsds",
+      "amount": "32",
+      "type": "debit",
+      "time_stamp": "2020-10-17T07:13:56.860Z"
     }
   ]
 }

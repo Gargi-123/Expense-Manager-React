@@ -8,8 +8,8 @@ import Navbar from "../navbar/Navbar";
 
 
 const Credit = () => {
-  const credits = useSelector((state) => state.ledger.credit);
   const dispatch = useDispatch();
+  const credits = useSelector((state) => state.ledger.credits);
   const loadedData = loadData("auth");
   const { id } = loadedData;
 
@@ -17,13 +17,12 @@ const Credit = () => {
 
   useEffect(() => {
     dispatch(getCreditTransactions(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <>
     <Navbar/>
-      <div><Link to="/ledger/credit">
-      <LedgerNavbar/></Link></div>
+      <LedgerNavbar/>
       <div className="row mt-5">
         <div className="col bg-light">
           <div className="row mt-4 text-center">
